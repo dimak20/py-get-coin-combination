@@ -1,11 +1,8 @@
 from app.main import get_coin_combination
 import pytest
 
+
 class TestGetCoinCombination:
-
-
-
-
 
     @pytest.mark.parametrize(
         "input, expected",
@@ -62,7 +59,7 @@ class TestGetCoinCombination:
             ),
             pytest.param(
                 True,
-                [1, 0, 0,0],
+                [1, 0, 0, 0],
                 id="hmmm"
             ),
             pytest.param(
@@ -74,10 +71,10 @@ class TestGetCoinCombination:
     )
     def test_get_combinations_correctly(
             self,
-            input: int,
+            inputt: int,
             expected: list
     ) -> None:
-        assert get_coin_combination(input) == expected
+        assert get_coin_combination(inputt) == expected
 
     @pytest.mark.parametrize(
         "input, expected_error",
@@ -106,8 +103,8 @@ class TestGetCoinCombination:
     )
     def test_raising_errors_correctly(
             self,
-            input: int,
+            inputt: int,
             expected_error: Exception
     ) -> None:
         with pytest.raises(expected_error):
-            get_coin_combination(input)
+            get_coin_combination(inputt)
