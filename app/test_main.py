@@ -5,7 +5,7 @@ import pytest
 class TestGetCoinCombination:
 
     @pytest.mark.parametrize(
-        "input, expected",
+        "inputt, expected",
         [
             pytest.param(
                 0,
@@ -66,6 +66,11 @@ class TestGetCoinCombination:
                 2**32,
                 [1, 0, 2, 171798691],
                 id="calculate the USA debt"
+            ),
+            pytest.param(
+                68.0,
+                [3.0, 1.0, 1.0, 2.0],
+                id="everything is float"
             )
         ]
     )
@@ -77,7 +82,7 @@ class TestGetCoinCombination:
         assert get_coin_combination(inputt) == expected
 
     @pytest.mark.parametrize(
-        "input, expected_error",
+        "inputt, expected_error",
         [
             pytest.param(
                 None,
